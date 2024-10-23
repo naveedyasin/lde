@@ -1,0 +1,191 @@
+/* src/tailwind.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@700&display=swap');
+
+.space-grotesk {
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.arima-koshi {
+    font-family: "Arima", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 30px;
+}
+
+@tailwind base;
+@layer base {
+
+    body {
+        @apply font-space-grotesk text-primary;
+    }
+    .content_area {
+        @apply mt-6 md:mt-12;
+    }
+    p{
+        @apply mb-4;
+    }
+    h1{
+        @apply text-xl mb-3;
+    }
+    h2{
+        @apply text-xl mb-3;
+    }
+    h3{
+
+    }
+    .text-lime-green{
+        color: #EDF7C1;
+    }
+    .bg-lime-green{
+        background-color: #EDF7C1;
+    }
+    .bg-lime-150{
+        background-color: #EDF7C1;
+    }
+    .bg-lime-250{
+        background-color: #E7F5AE;
+    }
+
+}
+
+
+@tailwind components;
+
+@layer components {
+
+/*Cards section*/
+.card {
+    @apply flex-auto w-84 md:w-96 md:mr-4 bg-white border border-gray-200 rounded-lg shadow overflow-hidden;
+}
+    .card_progress{
+        @apply w-full bg-gray-200 h-1.5 mt-0;
+    }
+    .fill_progress{
+        @apply bg-green h-1.5 rounded-r;
+    }
+    .card_section{
+        @apply text-gray-400 text-xs mb-2;
+    }
+    .card_title{
+        @apply mb-2 font-bold  font-arima-koshi;
+    }
+    .card_text{
+        @apply mb-3 font-normal text-gray-700;
+    }
+/*//end card section*/
+
+/*//buttons*/
+  .btn{
+      @apply text-primary font-medium text-lg rounded-full px-6 py-3 text-center m-1 mt-4;
+  }
+    .btn-primary{
+        @apply bg-blue-300 text-lime-green hover:bg-blue-200;
+    }
+    .btn-secondary{
+        @apply bg-lime-150 hover:bg-lime-250;
+    }
+    .btn-tertiary{
+        @apply border border-blue-300 hover:bg-gray-100;
+    }
+    .btn-small-dark{
+        @apply bg-blue-300 text-lime-green font-medium text-base rounded-full px-5 py-2 text-center m-1;
+    }
+    .btn-small-light{
+        @apply bg-lime-150 font-medium text-base rounded-full px-5 py-2 text-center m-1;
+    }
+
+/* form fields*/
+  .form-label{
+      @apply block mb-2 text-gray-900;
+  }
+    .text-input{
+        @apply block w-full p-2 mb-5 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500;
+    }
+    .error{
+        @apply !border-red focus:border-red;
+    }
+
+    .error-message{
+        @apply text-red;
+    }
+/* end form fields*/
+
+    .survey-container{
+        @apply w-4/12 m-3;
+    }
+    .survey-question{
+        @apply items-center mt-4;
+    }
+
+    .survey-label{
+        @apply block mb-2 text-primary text-lg;
+    }
+    .survey-input{
+        @apply border-2 border-gray-300 text-gray-600 text-lg rounded focus:ring-green-500 focus:border-green-500 block w-full p-4 outline-0;
+    }
+    .radio-input{
+        @apply w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2;
+    }
+    .radio-label{
+        @apply ms-2 font-medium text-gray-900;
+    }
+    /*.select-input{*/
+    /*    @apply border-2 border-gray-300 text-gray-600 text-lg rounded focus:ring-green-500 focus:border-green-500 block w-full p-4 outline-0;*/
+    /*}*/
+
+    .global_error{
+        @apply border rounded-2xl bg-red-400 p-2.5 w-[100%];
+    }
+
+    .autocomplete{
+        @apply relative;
+    }
+    .autocomplete-list{
+        @apply absolute top-[100%] left-0 right-0 border border-gray-500 bg-white z-50 max-h-36 overflow-y-auto list-none p-0 m-0;
+    }
+    .autocomplete-item{
+        @apply p-2.5 cursor-pointer;
+    }
+    .autocomplete-item:hover{
+        @apply bg-gray-100;
+    }
+    .spinner{
+        @apply w-5 h-5 mr-2 border-gray-50 border-4 border-l-0 rounded-full animate-spin;
+    }
+    .tab-line{
+        @apply h-1.5 rounded bg-gray-200 mb-2.5 cursor-pointer;
+    }
+    .tab-line-active {
+        @apply bg-gray-400;
+    }
+    .tab{
+        @apply hidden;
+    }
+    .tab-active{
+        @apply block;
+    }
+
+}
+
+
+@tailwind utilities;
+@layer utilities{
+    .w-84{
+        min-width: 21rem;
+    }
+    .w-152{
+        width: 38rem;
+    }
+
+    .underline_link{
+        @apply text-blue-300 underline;
+    }
+
+}
