@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpack TypeScript Setup</title>
+<!--    <link rel="stylesheet" type="text/css" href="app.css" />-->
+</head>
+<body>
+<h1>Lde survey for creating Last will and testament</h1>
+
+<div id="lde-survey">
+
+</div>
+
+
+<script src="bundle.js"></script>
+
+
+<script>
+    // import { lde_schema } from "../src/lde_schema";
+	// import Survey from "../src";
+
+	// const survey = new Survey({ }, {theme: {containerClass: 'abcNaveed' }, 'pageNo': 0});
+
+	const survey = new Survey(
+		{
+            'schemaUrl' : 'https://lde-front.test/api/v2/get-questionnaire-schema',
+            onComplete: 'https://lde-front.test/api/v2/save-answers',
+            'pageNo': 0
+		});
+
+	survey.render('lde-survey');
+
+</script>
+
+</body>
+</html>
